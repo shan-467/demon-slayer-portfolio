@@ -39,7 +39,8 @@ export function Nav() {
       return () => window.removeEventListener("keydown", esc);
     } else {
       scroller.lenis?.start();
-      gsap.to(el, { clipPath: "inset(100% 0 0 0)", duration: 0.6, ease: "expo.inOut", onComplete: () => gsap.set(el, { display: "none" }) });
+      gsap.to(el, { clipPath: "inset(100% 0 0 0)", duration: 0.6, ease: "expo.inOut", onComplete: () => { gsap.set(el, { display: "none" }); } });
+      return undefined;
     }
   }, [open]);
 
