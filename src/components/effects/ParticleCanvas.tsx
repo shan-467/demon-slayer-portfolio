@@ -25,7 +25,7 @@ export function ParticleCanvas({ mode = "embers", density = 1, className = "" }:
     let ps: P[] = [];
 
     const make = (): P => {
-      const c = PALETTE[mode][Math.floor(Math.random() * PALETTE[mode].length)];
+      const c = PALETTE[mode][Math.floor(Math.random() * PALETTE[mode].length)]!;
       const base = { x: Math.random() * w, y: Math.random() * h, a: Math.random() * 0.7 + 0.2, c, t: Math.random() * 100 };
       if (mode === "embers") return { ...base, r: Math.random() * 1.8 + 0.5, vx: (Math.random() - 0.5) * 0.3, vy: -(Math.random() * 0.6 + 0.2) };
       if (mode === "snow") return { ...base, r: Math.random() * 2 + 0.6, vx: (Math.random() - 0.3) * 0.4, vy: Math.random() * 0.7 + 0.3 };
@@ -66,7 +66,7 @@ export function ParticleCanvas({ mode = "embers", density = 1, className = "" }:
     const loop = () => { if (visible) draw(); raf = requestAnimationFrame(loop); };
     resize();
     if (reduced) draw(); else loop();
-    const io = new IntersectionObserver(([e]) => (visible = e.isIntersecting));
+    const io = new IntersectionObserver(([e]) => (visible = !!e?.isIntersecting));
     io.observe(canvas);
     window.addEventListener("resize", resize);
     return () => { cancelAnimationFrame(raf); io.disconnect(); window.removeEventListener("resize", resize); };

@@ -49,7 +49,7 @@ export function Battles() {
       const tl = gsap.timeline({ scrollTrigger: { trigger: root.current, start: "top top", end: `+=${panels.length * 100}%`, pin: true, scrub: 1 } });
       panels.forEach((p, i) => {
         if (i > 0) {
-          tl.to(panels[i - 1], { autoAlpha: 0, scale: 1.05, duration: 0.5 })
+          tl.to(panels[i - 1]!, { autoAlpha: 0, scale: 1.05, duration: 0.5 })
             .fromTo(p, { autoAlpha: 0, clipPath: i === 1 ? "inset(100% 0 0 0)" : "inset(0 0 0 100%)" }, { autoAlpha: 1, clipPath: "inset(0 0 0 0%)", duration: 0.8 }, "<");
         }
         tl.from(p.querySelector("[data-arc-title]"), { y: 60, opacity: 0, duration: 0.5 }, "<0.2").to({}, { duration: 1 });

@@ -76,7 +76,7 @@ export function Journey() {
     const { gsap } = ensureGsap();
     const ctx = gsap.context(() => {
       gsap.utils.toArray<HTMLElement>("[data-depth]").forEach((l) => {
-        const d = Number(l.dataset.depth);
+        const d = Number(l.dataset["depth"]);
         gsap.fromTo(l, { yPercent: -d * 10 }, { yPercent: d * 10, ease: "none", scrollTrigger: { trigger: root.current, start: "top bottom", end: "bottom top", scrub: true } });
       });
       gsap.from("[data-line]", { xPercent: -15, opacity: 0, stagger: 0.25, duration: 1.4, ease: "expo.out", scrollTrigger: { trigger: "[data-lines]", start: "top 75%" } });

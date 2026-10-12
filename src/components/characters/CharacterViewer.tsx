@@ -25,7 +25,7 @@ function Artwork({ c }: { c: Character }) {
 export function CharacterViewer() {
   const [idx, setIdx] = useState(0);
   const stage = useRef<HTMLDivElement>(null);
-  const c = characters[idx];
+  const c = characters[idx]!;
 
   useEffect(() => {
     const { gsap } = ensureGsap();
