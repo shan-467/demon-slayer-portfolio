@@ -71,6 +71,14 @@
   --shade-bottom: linear-gradient(to bottom, transparent 0%, oklch(0.14 0.008 270 / 60%) 60%, var(--obsidian) 100%);
   --shade-full: linear-gradient(to bottom, var(--obsidian) 0%, oklch(0.14 0.008 270 / 35%) 30%, oklch(0.14 0.008 270 / 45%) 70%, var(--obsidian) 100%);
   --glow-blood: 0 0 60px oklch(0.58 0.21 20 / 45%);
+  --castle-void: #100f17;
+  --castle-wood: #6c3930;
+  --castle-grain: #311b20;
+  --castle-paper: #e3b88a;
+  --castle-lantern: #ffba72;
+  --castle-cool: #aecddd;
+  --castle-shade: linear-gradient(to top, var(--obsidian), transparent 65%), linear-gradient(to right, oklch(0.14 0.008 270 / 95%), transparent 85%);
+  --dawn-shade: linear-gradient(to top, var(--obsidian), oklch(0.14 0.008 270 / 20%) 90%);
 }
 
 @layer base {
@@ -92,6 +100,8 @@
 @utility font-display { font-family: var(--font-display); }
 @utility shade-bottom { background: var(--shade-bottom); }
 @utility shade-full { background: var(--shade-full); }
+@utility castle-shade { background: var(--castle-shade); }
+@utility dawn-shade { background: var(--dawn-shade); }
 @utility text-vertical { writing-mode: vertical-rl; text-orientation: mixed; }
 @utility eyebrow {
   font-size: 0.7rem;
