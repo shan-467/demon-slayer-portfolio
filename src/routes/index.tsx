@@ -1,24 +1,27 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Nav } from "@/components/layout/Nav";
+import { Hero } from "@/components/hero/Hero";
+import { Beginning, Tragedy, Journey } from "@/components/story/EarlyChapters";
+import { Corps } from "@/components/story/Corps";
+import { Battles } from "@/components/story/Battles";
+import { HashiraWall } from "@/components/characters/HashiraWall";
+import { CharacterViewer } from "@/components/characters/CharacterViewer";
+import { InfinityCastle } from "@/components/story/InfinityCastle";
+import { FinalBattle } from "@/components/story/FinalBattle";
+import { Legacy } from "@/components/story/Legacy";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
+  head: () => ({ meta: [
+    { title: "Eternal Flame — The Demon Slayer Story" },
+    { name: "description", content: "Journey through Demon Slayer, from the Kamado family tragedy to the Infinity Castle, the final dawn and an enduring legacy." },
+    { property: "og:title", content: "Eternal Flame — The Demon Slayer Story" },
+    { property: "og:description", content: "Nine chapters of courage and sacrifice, with an immersive three-dimensional Infinity Castle." },
+    { property: "og:type", content: "website" },
+    { name: "twitter:card", content: "summary_large_image" },
+  ] }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
-  return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
-  );
+  return <><Nav /><main><Hero /><Beginning /><Tragedy /><Journey /><Corps /><Battles /><HashiraWall /><InfinityCastle /><FinalBattle /><Legacy /><CharacterViewer /></main></>;
 }
