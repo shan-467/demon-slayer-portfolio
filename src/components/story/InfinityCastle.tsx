@@ -9,9 +9,9 @@ import { ChapterHeading } from "./ChapterHeading";
 
 const Scene = lazy(() => import("./InfinityCastleScene"));
 class SceneBoundary extends Component<{ children: ReactNode }, { failed: boolean }> {
-  state = { failed: false };
+  override state = { failed: false };
   static getDerivedStateFromError() { return { failed: true }; }
-  render() { return this.state.failed ? null : this.props.children; }
+  override render() { return this.state.failed ? null : this.props.children; }
 }
 
 export function InfinityCastle() {
