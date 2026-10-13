@@ -46,7 +46,7 @@ export function InfinityCastle() {
     >
       <video
         ref={video}
-        src="/infinity-castle-motion.mp4"
+        src={`${import.meta.env.BASE_URL}infinity-castle-motion.mp4`}
         poster={backgrounds.infinityCastle}
         muted
         loop

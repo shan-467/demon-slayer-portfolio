@@ -75,7 +75,7 @@ export function FinalBattle() {
       <div ref={videoFrame} className="relative aspect-video w-full overflow-hidden bg-background">
         <video
           ref={video}
-          src="/final-battle-motion.mp4"
+          src={`${import.meta.env.BASE_URL}final-battle-motion.mp4`}
           poster={dawn}
           muted
           loop

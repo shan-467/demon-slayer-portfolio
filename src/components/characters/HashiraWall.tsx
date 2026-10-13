@@ -8,17 +8,18 @@ function PillarCard({ h, i }: { h: Character; i: number }) {
   const card = useRef<HTMLElement>(null);
   const video = useRef<HTMLVideoElement>(null);
   const [active, setActive] = useState(false);
+  const videoBaseUrl = import.meta.env.BASE_URL;
   const videoSrc =
     h.id === "rengoku"
-      ? "/rengoku-motion.mp4"
+      ? `${videoBaseUrl}rengoku-motion.mp4`
       : h.id === "giyu"
-        ? "/giyu-motion.mp4"
+        ? `${videoBaseUrl}giyu-motion.mp4`
         : h.id === "shinobu"
-          ? "/shinobu-motion.mp4"
+          ? `${videoBaseUrl}shinobu-motion.mp4`
           : h.id === "tengen"
-            ? "/tengen-motion.mp4"
+            ? `${videoBaseUrl}tengen-motion.mp4`
             : h.id === "muichiro"
-              ? "/muichiro-motion.mp4"
+              ? `${videoBaseUrl}muichiro-motion.mp4`
               : undefined;
 
   useEffect(() => {
